@@ -28,13 +28,13 @@ In addition, this project will include:
 
 ### Wireframes
 
-![Index page wireframe](/index.png)
+![Index page wireframe](assets/index.png)
 - The two left panels can be used to select cars to search. Car types will have checkboxes and thumbnails will be highlighted and display a check mark when selected.
 - The third panel on the right is for selecting car specification categories. Each category will have a checkbox.
 - The main search button is at the bottom.
 
 
-![Results page wireframe](/results.png)
+![Results page wireframe](assets/results.png)
 - The main panel on the left will display the bar graph.
 - The smaller right panel will display specifications, which the user can rearrange to re-sort the results.
 
