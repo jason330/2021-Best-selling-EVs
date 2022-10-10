@@ -1,7 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
     // setTimeout(() => {
     //     document.querySelector("p").style.backgroundColor = "green"
     // }, 2500)
+    
     const CARS = require('./cars')
 
     let emptyCarsUlist = document.getElementById("cars")
@@ -14,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         newCarItem.innerText = car
         carNamesArray.push(car)
     }
-})
+// })
 
 
 

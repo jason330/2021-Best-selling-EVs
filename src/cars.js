@@ -1,12 +1,13 @@
 const CARS = {
     "Hyundai Ioniq Electric" : {
-        base_price: 45295,
+        price: 45295,
         economy_combined: 114,
         economy_detailed: "114/132/98",
         Range: 303,
         peak_power : 225,
         acceleration : 7.4,
-        max_Seating : 27.2
+        max_Seating : 5,
+        Cargo: 27.2
     },
     "Hyundai Kona Electric" : {
         price: 35295,
