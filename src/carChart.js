@@ -193,9 +193,10 @@ CARS.forEach(car => {
 const carChart = new Chart (ctx, {
     type: 'bar',
     data: {
+        // datasets: [CARS]
         labels: carNamesArray,
         datasets: [{
-            label: `${CARS[0][1]}`,
+            label: `${Object.keys(CARS[0])[1]}`,
             data: priceArr,
             backgroundColor: ["green"],
             borderColor: ["rgba(0, 0, 0, 0.1)"],
