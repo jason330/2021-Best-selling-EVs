@@ -205,7 +205,13 @@ carNamesArray.forEach(carName => {
 
 // CAR CHART
 let selectedCategory = "price"
-let sortedCarObjArr = cars.sort((a,b) => a[selectedCategory] - b[selectedCategory]);
+let sortedCarObjArr
+if (selectedCategory === "price" || selectedCategory === "acceleration") {
+    sortedCarObjArr = cars.sort((a,b) => a[selectedCategory] - b[selectedCategory]);
+} else {
+    sortedCarObjArr = cars.sort((a,b) => b[selectedCategory] - a[selectedCategory]);
+}
+// debugger
 
 let sortedDataArr = sortedCarObjArr.map(carObj => carObj[selectedCategory])
 let sortedNamesArr = sortedCarObjArr.map(carObj => carObj.name)
@@ -215,6 +221,10 @@ let sortedNamesArr = sortedCarObjArr.map(carObj => carObj.name)
 //     return carSpecs[selectedCategory]
 // })
 
+// let ascendingCategories = [price, acceleration]
+// let reversed = true
+// carChart.options.scales.y.reverse = false
+// }
 
 const ctx = 'carChart'
 let carChart = new Chart (ctx, {
@@ -240,7 +250,7 @@ let carChart = new Chart (ctx, {
                 position: 'top'
             },
             y: {
-
+                // reverse: reversed
             }
         }
         // grouped: true
@@ -296,13 +306,18 @@ specArr.forEach(spec => {
 
 emptySpecsUlist.addEventListener("click", (clickEvent) => {
     selectedCategory = clickEvent.target.className
-
-    sortedCarObjArr = cars.sort((a,b) => a[selectedCategory] - b[selectedCategory]);
+    
+    if (selectedCategory === "price" || selectedCategory === "acceleration") {
+        sortedCarObjArr = cars.sort((a,b) => a[selectedCategory] - b[selectedCategory]);
+    } else {
+        sortedCarObjArr = cars.sort((a,b) => b[selectedCategory] - a[selectedCategory]);
+    }
+    // sortedCarObjArr = cars.sort((a,b) => a[selectedCategory] - b[selectedCategory]);
     sortedDataArr = sortedCarObjArr.map(carObj => carObj[selectedCategory])
     sortedNamesArr = sortedCarObjArr.map(carObj => carObj.name)
 
-    let updatedLabel = Object.keys(specToKey).find(key => key === selectedCategory)
-    carChart.data.datasets.label = updatedLabel
+    let updatedLabel = Object.keys(specToKey).find(key => specToKey[key] === selectedCategory)
+
     carChart.data.labels = sortedNamesArr
     carChart.data.datasets = [{
         label: updatedLabel,    //`${Object.keys(cars[0])[1]}`
@@ -311,6 +326,11 @@ emptySpecsUlist.addEventListener("click", (clickEvent) => {
         borderColor: ["rgba(0, 0, 0, 0.1)"],
         borderWidth: 1,
     }]
+
+    // debugger
+    // if (selectedCategory === "price" || selectedCategory === "acceleration") {
+    //     carChart.options.scales.y.reverse = false
+    // }
     carChart.update();
   })
 // https://developer.mozilla.org/en-US/docs/Web/API/CanvasGradient
