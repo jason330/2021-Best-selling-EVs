@@ -1,4 +1,4 @@
-const specs = require('./specifications')
+// const specs = require('./specifications')
 
 // let cars = require ('./cars')
 // let CARS = {
@@ -138,7 +138,7 @@ let cars = [
         price: 45295,
         economy_combined: 114,
         economy_detailed: "114/132/98",
-        range: 303,
+        "range": 303,
         peak_power : 225,
         acceleration : 7.4,
         max_Seating : 5,
@@ -149,7 +149,7 @@ let cars = [
         price: 35295,
         economy_combined: 120,
         economy_detailed: "120/132/108",
-        range: 258,
+        "range": 258,
         peak_power : 201,
         acceleration : 7.9,
         max_Seating : 5,
@@ -160,7 +160,7 @@ let cars = [
         price: 120990,
         economy_combined: 105,
         economy_detailed: "105/109/101",
-        range: 347,
+        "range": 347,
         peak_power : 670,
         acceleration : 3.8,
         max_Seating : 7,
@@ -171,7 +171,7 @@ let cars = [
         price: 104990,
         economy_combined: 117,
         economy_detailed: "117/121/112",
-        range: 405,
+        "range": 405,
         peak_power : 670,
         acceleration : 3.1,
         max_Seating : 5,
@@ -182,7 +182,7 @@ let cars = [
         price: 107950,
         economy_combined: 79,
         economy_detailed: "79/76/84",
-        range: 227,
+        "range": 227,
         peak_power : 429,
         acceleration : 3.8,
         max_Seating : 5,
@@ -190,6 +190,7 @@ let cars = [
     }
 ]
 
+// LEFT PANEL, ALL CARS
 let emptyCarsUlist = document.getElementById("cars")
 
 let carNamesArray = cars.map(carObj => carObj.name)
@@ -201,10 +202,12 @@ carNamesArray.forEach(carName => {
     // carNamesArray.push(car["name"])
 })
 
-let selectedCategory = "price"
-let sortedCarObjArr = cars.sort((a,b) => a.price - b.price);
 
-let sortedDataArr = sortedCarObjArr.map(carObj => carObj.price)
+// CAR CHART
+let selectedCategory = "range"
+let sortedCarObjArr = cars.sort((a,b) => a[selectedCategory] - b[selectedCategory]);
+
+let sortedDataArr = sortedCarObjArr.map(carObj => carObj[selectedCategory])
 let sortedNamesArr = sortedCarObjArr.map(carObj => carObj.name)
 // debugger
 // Object.values(CARS).map(carSpecs => {
@@ -258,4 +261,4 @@ let carChart = new Chart (ctx, {
 })
 
 // https://developer.mozilla.org/en-US/docs/Web/API/CanvasGradient
-module.exports = {};
+// module.exports = {};

@@ -34,4 +34,4 @@ let updateSelectedCategory = (clickEvent) => {
 
 emptySpecsUlist.addEventListener("click", updateSelectedCategory)
 // debugger
-module.exports = {};
+// module.exports = {};
