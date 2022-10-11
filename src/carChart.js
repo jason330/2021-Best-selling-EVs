@@ -1,5 +1,58 @@
-// const CARS = require('./cars')
+const specs = require('./specifications')
 
+// let cars = require ('./cars')
+// let CARS = {
+//     "Hyundai Ioniq Electric" : {
+//         Price: 45295,
+//         economy_combined: 114,
+//         economy_detailed: "114/132/98",
+//         Range: 303,
+//         peak_power: 225,
+//         acceleration: 7.4,
+//         max_Seating: 5,
+//         Cargo: 27.2
+//     },
+//     "Hyundai Kona Electric" : {
+//         Price: 35295,
+//         economy_combined: 120,
+//         economy_detailed: "120/132/108",
+//         Range: 258,
+//         peak_power: 201,
+//         acceleration: 7.9,
+//         max_Seating: 5,
+//         Cargo: 19.2
+//     },
+//     "Tesla Model X" : {
+//         Price: 120990,
+//         economy_combined: 105,
+//         economy_detailed: "105/109/101",
+//         Range: 347,
+//         peak_power: 670,
+//         acceleration: 3.8,
+//         max_Seating: 7,
+//         Cargo: 37.1
+//     },
+//     "Tesla Model S" : {
+//         Price: 104990,
+//         economy_combined: 117,
+//         economy_detailed: "117/121/112",
+//         Range: 405,
+//         peak_power: 670,
+//         acceleration: 3.1,
+//         max_Seating: 5,
+//         Cargo: 28
+//     },
+//     "Porsche Taycan 4S" : {
+//         Price: 107950,
+//         economy_combined: 79,
+//         economy_detailed: "79/76/84",
+//         Range: 227,
+//         peak_power: 429,
+//         acceleration: 3.8,
+//         max_Seating: 5,
+//         Cargo: 14.3
+//     }
+// }
 // class Car {
 //     constructor(
 //         name,
@@ -79,47 +132,13 @@
 //     14.3
 // ]
 
-// let emptyCarsUlist = document.getElementById("cars")
-
-// var carNamesArray = []
-
-// for (const car in CARS) {
-//     let newCarItem = document.createElement("li")
-//     emptyCarsUlist.append(newCarItem);
-//     newCarItem.innerText = car
-//     carNamesArray.push(car)
-// }
-
-// const ctx = 'carChart'
-
-// let priceArr = []
-// for(const car of Object.keys(CARS)) {
-//     debugger
-//     priceArr.push(car["price"])
-// }
-
-// const carChart = new Chart (ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: carNamesArray,
-//         datasets: [{
-//             label: `${Object.keys(CARS["Hyundai Ioniq Electric"])[1]}`,
-//             data: priceArr,
-//             backgroundColor: ["green"],
-//             borderColor: ["rgba(0, 0, 0, 0.1)"],
-//             borderWidth: 10,
-//         }]
-//     }
-// })
-
-
-const CARS = [
+let cars = [
     {
         name: "Hyundai Ioniq Electric",
         price: 45295,
         economy_combined: 114,
         economy_detailed: "114/132/98",
-        Range: 303,
+        range: 303,
         peak_power : 225,
         acceleration : 7.4,
         max_Seating : 5,
@@ -130,7 +149,7 @@ const CARS = [
         price: 35295,
         economy_combined: 120,
         economy_detailed: "120/132/108",
-        Range: 258,
+        range: 258,
         peak_power : 201,
         acceleration : 7.9,
         max_Seating : 5,
@@ -141,7 +160,7 @@ const CARS = [
         price: 120990,
         economy_combined: 105,
         economy_detailed: "105/109/101",
-        Range: 347,
+        range: 347,
         peak_power : 670,
         acceleration : 3.8,
         max_Seating : 7,
@@ -152,7 +171,7 @@ const CARS = [
         price: 104990,
         economy_combined: 117,
         economy_detailed: "117/121/112",
-        Range: 405,
+        range: 405,
         peak_power : 670,
         acceleration : 3.1,
         max_Seating : 5,
@@ -163,7 +182,7 @@ const CARS = [
         price: 107950,
         economy_combined: 79,
         economy_detailed: "79/76/84",
-        Range: 227,
+        range: 227,
         peak_power : 429,
         acceleration : 3.8,
         max_Seating : 5,
@@ -173,36 +192,70 @@ const CARS = [
 
 let emptyCarsUlist = document.getElementById("cars")
 
-var carNamesArray = []
+let carNamesArray = cars.map(carObj => carObj.name)
 
-CARS.forEach(car => {
+carNamesArray.forEach(carName => {
     let newCarItem = document.createElement("li")
     emptyCarsUlist.append(newCarItem);
-    newCarItem.innerText = car["name"]
-    carNamesArray.push(car["name"])
+    newCarItem.innerText = carName
+    // carNamesArray.push(car["name"])
 })
+
+let selectedCategory = "price"
+let sortedCarObjArr = cars.sort((a,b) => a.price - b.price);
+
+let sortedDataArr = sortedCarObjArr.map(carObj => carObj.price)
+let sortedNamesArr = sortedCarObjArr.map(carObj => carObj.name)
+// debugger
+// Object.values(CARS).map(carSpecs => {
+//     // debugger
+//     return carSpecs[selectedCategory]
+// })
+
 
 const ctx = 'carChart'
-
-let priceArr = []
-CARS.forEach(car => {
-    // debugger
-    priceArr.push(car["price"])
-})
-
-const carChart = new Chart (ctx, {
+let carChart = new Chart (ctx, {
     type: 'bar',
     data: {
-        // datasets: [CARS]
-        labels: carNamesArray,
+        labels: sortedNamesArr,
         datasets: [{
-            label: `${Object.keys(CARS[0])[1]}`,
-            data: priceArr,
+            label: `${Object.keys(cars[0])[1]}`,
+            data: sortedDataArr,
             backgroundColor: ["green"],
             borderColor: ["rgba(0, 0, 0, 0.1)"],
-            borderWidth: 10,
+            borderWidth: 1,
         }]
+    },
+    options: {
+        indexAxis: 'y',
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: `title = ${Object.keys(cars[0])[1]}`,
+                },
+                position: 'top'
+            },
+            y: {
+
+            }
+        }
+        // grouped: true
+        // plugins: {
+        //     tooltip: {
+        //         callbacks: {
+        //             label: function (context) {
+        //                 let label = context.dataset.label
+        //                 if (label === `${Object.keys(CARS[0])[1]}`) {
+        //                     label = `${Object.keys(CARS[0])[1]}` + ": " + new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y)
+        //                 }
+        //                 return label;
+        //             }
+        //         }
+        //     }
+        // }
     }
 })
 
 // https://developer.mozilla.org/en-US/docs/Web/API/CanvasGradient
+module.exports = {};
