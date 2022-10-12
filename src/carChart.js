@@ -309,7 +309,7 @@ const specToKey = {
 
 emptySpecsUlist.addEventListener("click", (clickEvent) => {
     selectedCategory = clickEvent.target.className
-
+    console.log(clickEvent, "clickevent")
     if (selectedCategory === "price" || selectedCategory === "acceleration") {
         sortedCarObjArr = cars.sort((a,b) => a[selectedCategory] - b[selectedCategory]);
     } else {
