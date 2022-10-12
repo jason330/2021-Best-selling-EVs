@@ -139,7 +139,7 @@ let cars = [
         economy_combined: 114,
         economy_detailed: "114/132/98",
         range: 303,
-        peak_power : 225,
+        peak_power: 225,
         acceleration : 7.4,
         max_Seating : 5,
         Cargo: 27.2
@@ -150,7 +150,7 @@ let cars = [
         economy_combined: 120,
         economy_detailed: "120/132/108",
         range: 258,
-        peak_power : 201,
+        peak_power: 201,
         acceleration : 7.9,
         max_Seating : 5,
         Cargo : 19.2
@@ -161,7 +161,7 @@ let cars = [
         economy_combined: 105,
         economy_detailed: "105/109/101",
         range: 347,
-        peak_power : 670,
+        peak_power: 670,
         acceleration : 3.8,
         max_Seating : 7,
         Cargo : 37.1
@@ -172,7 +172,7 @@ let cars = [
         economy_combined: 117,
         economy_detailed: "117/121/112",
         range: 405,
-        peak_power : 670,
+        peak_power: 670,
         acceleration : 3.1,
         max_Seating : 5,
         Cargo : 28
@@ -183,10 +183,87 @@ let cars = [
         economy_combined: 79,
         economy_detailed: "79/76/84",
         range: 227,
-        peak_power : 429,
+        peak_power: 429,
         acceleration : 3.8,
         max_Seating : 5,
         Cargo : 14.3
+    },
+    {
+        name: "Audi e-tron",
+        price: 71995,
+        economy_combined: 79,
+        economy_detailed: "79/78/79",
+        range: 226,
+        peak_power: 402,
+        acceleration : 5.5,
+        max_Seating : 5,
+        Cargo : 28.5
+    },
+    {
+        name: "Nissan Leaf SV PLUS",
+        price: 37135,
+        economy_combined: 109,
+        economy_detailed: "109/121/98",
+        range: 215,
+        peak_power: 214,
+        acceleration : 7.4,
+        max_Seating : 5,
+        Cargo : 23.6 
+    },
+    {
+        name: "Volkswagen ID.4 Pro",
+        price: 43790,
+        economy_combined: 91,
+        economy_detailed: "91/104/89",
+        range: 275,
+        peak_power: 201,
+        acceleration : 7.6,
+        max_Seating : 5,
+        Cargo : 30.3
+    },
+    {
+        name: "Chevrolet Bolt EV",
+        price: 32495,
+        economy_combined: 118,
+        economy_detailed: "118/127/108",
+        range: 259,
+        peak_power: 200,
+        acceleration : 6.5,
+        max_Seating : 5,
+        Cargo : 16.6
+    },
+    {
+        name: "Ford Mustang Mach-E California Route 1",
+        price: 64875,
+        economy_combined: 100,
+        economy_detailed: "100/105/93",
+        range: 312,
+        peak_power: 346,
+        acceleration : 4.8,
+        max_Seating : 5,
+        Cargo : 29
+    },
+    {
+        name: "Tesla Model Y Long Range",
+        price: 65990,
+        economy_combined: 122,
+        economy_detailed: "122/127/117",
+        range: 326,
+        peak_power: 390,
+        acceleration : 4.8,
+        max_Seating : 7,
+        Cargo : 30.2
+    },
+    {
+        name: "Tesla Model 3 RWD",
+        price: 46990,
+        economy_combined: 132,
+        economy_detailed: "132/138/126",
+        range: 272,
+        peak_power: 271,
+        acceleration : 5.8,
+        max_Seating : 5,
+        Cargo : 22.9
     }
 ]
 
