@@ -1,3 +1,6 @@
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/reset.css ***!
+  \****************************************************************************************************/
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
 section, img, div, h2, p, form,
@@ -48,6 +51,77 @@ button,
 input[type="submit"] {
   cursor: pointer;
 }
-body{font-family:"Noto Sans"}h1{display:flex;justify-content:center}nav{position:absolute;right:10px}main{display:flex;justify-content:space-around}ul{list-style:none}
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+body {
+  background-color: #A6A4A6;
+  font-family: "Noto Sans";
+  color: #403F40;
+}
 
-/*# sourceMappingURL=main.css.map*/
+header {
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  position: absolute;
+  right: 10px;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+ul {
+  list-style: none;
+  margin-top: 50px;
+}
+
+#specifications li {
+  display: flex;
+  padding: 15px;
+  border: 3px solid #0D0D0D;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+#specifications li:hover {
+  cursor: pointer;
+  background-color: #D9D7D8;
+}
+
+#specifications img {
+  height: 35px;
+  width: 35px;
+  margin-right: 15px;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+}
+
+/* Color Theme Swatches in Hex */
+.Ziryab-Films-brand-identity-1-hex {
+  color: #D9D7D8;
+}
+
+.Ziryab-Films-brand-identity-2-hex {
+  color: #A6A4A6;
+}
+
+.Ziryab-Films-brand-identity-3-hex {
+  color: #737273;
+}
+
+.Ziryab-Films-brand-identity-4-hex {
+  color: #403F40;
+}
+
+.Ziryab-Films-brand-identity-5-hex {
+  color: #0D0D0D;
+}

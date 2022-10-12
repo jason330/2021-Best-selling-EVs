@@ -14,11 +14,13 @@
   </head>
 
   <body>
+    <header>EV Comparison</header>
+
     <nav>
         <a href="https://github.com/jason330">GitHub</a>
     </nav>
         
-    <h1>Car Search</h1>
+    <!-- <h1>Car Search</h1> -->
 
     <main>
 
@@ -32,7 +34,7 @@
         
         
         <section>
-            <h2>Result Comparison</h2>
+            <h2>Results</h2>
             <div>
               <canvas id="carChart" width="600" height="650"></canvas>
               
@@ -41,12 +43,46 @@
         
         
         <section>
-            <h2>Choose Specifications</h2>
+            <h2>Sort By:</h2>
               <ul id="specifications">
+                <li class="price">
+                  <img src="assets/categoryImages/price.svg" alt="dollar sign">
+                  <h1>Price</h1>
+                </li>
+
+                <li class="economy_combined">
+                  <img src="assets/categoryImages/economy.svg" alt="car battery">
+                  <h1>Economy</h1>
+                </li>
+
+                <li class="range">
+                  <img src="assets/categoryImages/range.svg" alt="EV charging station">
+                  <h1>Range</h1>
+                </li>
+
+                <li class="peak_power">
+                  <img src="assets/categoryImages/horse-solid.svg" alt="horse">
+                  <h1>Peak Power</h1>
+                </li>
+
+                <li class="acceleration">
+                  <img src="assets/categoryImages/accel-gauge.svg" alt="speedometer">
+                  <h1>Acceleration</h1>
+                </li>
+
+                <li class="max_Seating">
+                  <img src="assets/categoryImages/seat.svg" alt="chair">
+                  <h1>Max Seating</h1>
+                </li>
+
+                <li class="Cargo">
+                  <img src="assets/categoryImages/cargo.svg" alt="cargo truck">
+                  <h1>Cargo Space</h1>
+                </li>
 
               </ul>
               <script src="src/carChart.js"></script>
-              <script src="src/specifications.js"></script>
+              <!-- <script src="src/specifications.js"></script> -->
         </section>
     
     </main>

@@ -270,6 +270,9 @@ let carChart = new Chart (ctx, {
     }
 })
 
+
+// RIGHT SPECS PANEL
+
 let emptySpecsUlist = document.getElementById("specifications")
 
 const specArr = [
@@ -292,12 +295,12 @@ const specToKey = {
   "Cargo Space (cu.-ft., with rear seats up)": "Cargo"
 }
 
-specArr.forEach(spec => {
-  let newSpecification = document.createElement("li")
-  emptySpecsUlist.append(newSpecification);
-  newSpecification.innerText = spec
-  newSpecification.setAttribute("class",specToKey[spec])
-})
+// specArr.forEach(spec => {
+//   let newSpecification = document.createElement("li")
+//   emptySpecsUlist.append(newSpecification);
+//   newSpecification.innerText = spec
+//   newSpecification.setAttribute("class",specToKey[spec])
+// })
 
 // let updateSelectedCategory = (clickEvent) => {
 //   selectedCategory = clickEvent.target.className
@@ -306,7 +309,7 @@ specArr.forEach(spec => {
 
 emptySpecsUlist.addEventListener("click", (clickEvent) => {
     selectedCategory = clickEvent.target.className
-    
+
     if (selectedCategory === "price" || selectedCategory === "acceleration") {
         sortedCarObjArr = cars.sort((a,b) => a[selectedCategory] - b[selectedCategory]);
     } else {
