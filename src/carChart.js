@@ -326,7 +326,7 @@ let updatedLabel = Object.keys(specToKey).find(key => specToKey[key] === selecte
     
 const ctx = document.getElementById('carChart').getContext('2d');
 const gradient = ctx.createLinearGradient(5, 730, 5, 100)
-gradient.addColorStop(0, "#A6A4A6")
+gradient.addColorStop(0, "#BFBFBF")
 gradient.addColorStop(1, "#403F40")
 // ctx.fillStyle = gradient 
 
@@ -441,7 +441,7 @@ let emptySpecsUlist = document.getElementById("specifications")
 // }
 
 emptySpecsUlist.addEventListener("click", (clickEvent) => {
-    
+    document.querySelector(`.${selectedCategory}`).classList.remove("selected")
     selectedCategory = clickEvent.target.className
     document.querySelector(`.${selectedCategory}`).classList.add("selected")
 

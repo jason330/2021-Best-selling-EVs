@@ -81,7 +81,7 @@ ul {
 }
 
 #buttonsSection {
-    margin: 60px;           //NEWCHANGE
+    margin: 90px;           //NEWCHANGE
     // margin-left: 50px;   //NEWCHANGE
 
     // display: flex;
@@ -98,9 +98,14 @@ ul {
 #specifications li {
     display: flex;
     padding: 15px;
-    border: 3px solid #0D0D0D;
+    border: 3px solid #737373;
     border-radius: 20px;
     margin: 10px;
+}
+
+.selected {
+    background-color: #BFBFBF ;
+    color: #0D0D0D;
 }
 
 #specifications li:hover {
@@ -144,6 +149,27 @@ h2 {
 .Amata-Power-3-hex { color: #F2F2F2; }
 .Amata-Power-4-hex { color: #D9D9D9; }
 .Amata-Power-5-hex { color: #0D0D0D; }
+
+/* Color Theme Swatches in Hex */
+.Aremia-Typeface-1-hex { color: #F2F2F2; }
+.Aremia-Typeface-2-hex { color: #BFBFBF; }
+.Aremia-Typeface-3-hex { color: #737373; }
+.Aremia-Typeface-4-hex { color: #404040; }
+.Aremia-Typeface-5-hex { color: #0D0D0D; }
+
+// /* Color Theme Swatches in RGBA */
+// .Aremia-Typeface-1-rgba { color: rgba(242, 242, 242, 1); }
+// .Aremia-Typeface-2-rgba { color: rgba(191, 191, 191, 1); }
+// .Aremia-Typeface-3-rgba { color: rgba(114, 114, 114, 1); }
+// .Aremia-Typeface-4-rgba { color: rgba(63, 63, 63, 1); }
+// .Aremia-Typeface-5-rgba { color: rgba(12, 12, 12, 1); }
+
+// /* Color Theme Swatches in HSLA */
+// .Aremia-Typeface-1-hsla { color: hsla(0, 0, 95, 1); }
+// .Aremia-Typeface-2-hsla { color: hsla(0, 0, 75, 1); }
+// .Aremia-Typeface-3-hsla { color: hsla(0, 0, 45, 1); }
+// .Aremia-Typeface-4-hsla { color: hsla(0, 0, 25, 1); }
+// .Aremia-Typeface-5-hsla { color: hsla(0, 0, 5, 1); }
 
 // /* Color Theme Swatches in RGBA */
 // .Amata-Power-1-rgba { color: rgba(38, 37, 35, 1); }
