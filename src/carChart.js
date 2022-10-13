@@ -457,7 +457,7 @@ emptySpecsUlist.addEventListener("click", (clickEvent) => {
     } else {
         sortedCarObjArr = cars.sort((a,b) => b[selectedCategory] - a[selectedCategory]);
     }
-    // sortedCarObjArr = cars.sort((a,b) => a[selectedCategory] - b[selectedCategory]);
+
     sortedDataArr = sortedCarObjArr.map(carObj => carObj[selectedCategory])
     sortedNamesArr = sortedCarObjArr.map(carObj => carObj.name)
 
