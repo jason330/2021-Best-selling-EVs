@@ -380,6 +380,13 @@ let carChart = new Chart (ctx, {
                     size: 24
                 }
             },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        return '$' + new Intl.NumberFormat().format(context.parsed.x);
+                    }
+                }
+            },
             legend: {
                 display: false,
                 // labels: {
@@ -474,17 +481,27 @@ emptySpecsUlist.addEventListener("click", (clickEvent) => {
         carChart.options.scales.x.ticks.callback = function(value, index, ticks) {
             return '$' + new Intl.NumberFormat().format(value);
         }
+        carChart.options.plugins.tooltip.callbacks.label = function(context) {
+            return '$' + new Intl.NumberFormat().format(context.parsed.x);
+        }
     } else {
         carChart.options.scales.x.ticks = {
             font: {
                 size: 14
             }
         }
+        carChart.options.plugins.tooltip.callbacks = {}
     }
     // if (selectedCategory === "price" || selectedCategory === "acceleration") {
     //     carChart.options.scales.y.reverse = false
     // }
     carChart.update();
-  })
+})
+
+let carsList = document.getElementById("carsSection")
+
+carsList.addEventListener("click", (carClick) => {
+    selectedCar = clickEvent.target.className
+})
 // https://developer.mozilla.org/en-US/docs/Web/API/CanvasGradient
 // module.exports = {};
