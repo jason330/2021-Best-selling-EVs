@@ -43,7 +43,7 @@ nav {
 main {
     display: flex;
     flex-wrap: wrap;
-    // justify-content: space-around;
+    // justify-content: space-between; //NEWCHANGE
 }
 
 #carsSection {
@@ -81,8 +81,9 @@ ul {
 }
 
 #buttonsSection {
-    margin-top: 60px;
-    margin-left: 50px;
+    margin: 60px;           //NEWCHANGE
+    // margin-left: 50px;   //NEWCHANGE
+
     // display: flex;
     // justify-content: center;
     // flex-direction: row;
