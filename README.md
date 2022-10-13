@@ -6,7 +6,8 @@ https://github.com/jason330/2021-Best-selling-EVs
 
 ### Background
 
-At this site, users can get information about and compare the best-selling electric vehicles of 2021 in the United States through a bar chart. Users can choose to sort chart data based on multiple car specification categories such as price, range, and passenger capacity. User selection will update the specification category and sort order of the chart data. 
+At this site, users can get information about and compare through a bar chart the best-selling electric vehicles of 2021 in the United States. Users can choose to sort chart data based on multiple car specification categories such as price, range, and passenger capacity. User selection will update the specification category and sort order of the chart data. 
+
 
 
 
@@ -17,11 +18,13 @@ At this site, users can get information about and compare the best-selling elect
 
 
 
+
 ### Wireframe
 
 ![Page wireframe](assets/results.png)
 - The main panel will display the bar graph.
 - The smaller right panel will display specifications, which the user can select to sort the results.
+
 
 
 
@@ -35,6 +38,7 @@ This project is implemented with the following technologies:
 
 
 
+
 ### Implementation Timeline
 
 - Friday:
@@ -42,7 +46,6 @@ This project is implemented with the following technologies:
     - Create HTML skeleton for initial HTTP response
     - Create main panels
     - Test NHTSA API; if not feasible, manually gather data and vehicle images
-    - Get "Cars" panel to display with data
 
 - Weekend
     - Get car thumbnails to display
@@ -55,7 +58,7 @@ This project is implemented with the following technologies:
 
 - Tuesday
     - Finish remaining core features
-    - Add link to my GitHub
+    - Add GitHub link
     - Start styling
         - Fonts
         - Borders
@@ -72,6 +75,7 @@ This project is implemented with the following technologies:
 
 
 
+
 ### Technical Implementation Details
 
 There is an array of objects, with each object containing individual car data.
@@ -84,7 +88,9 @@ There is an event listener on the specification category list, which updates the
 
 
 
+
 ### Future Features
 
 1. Allow the user to select specific cars, either to display only the selected cars in the chart, or to highlight the selected bars in the chart.
-2. Improve layout and color scheme.
+2. Improve color scheme.
+3. Improve layout, possibly by adding car data, such as safety ratings.
