@@ -1,8 +1,6 @@
-# Best-Selling Electric Vehicles of 2021
+# JavaScript-project
 
 
-
-https://github.com/jason330/2021-Best-selling-EVs
 
 ### Background
 
