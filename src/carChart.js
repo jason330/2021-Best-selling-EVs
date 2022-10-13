@@ -498,10 +498,11 @@ emptySpecsUlist.addEventListener("click", (clickEvent) => {
     carChart.update();
 })
 
-let carsList = document.getElementById("carsSection")
-
-carsList.addEventListener("click", (carClick) => {
-    selectedCar = clickEvent.target.className
-})
+// let carsList = document.getElementById("carsList")
+// let selectedCar
+// carsList.addEventListener("click", (carClick) => {
+//     selectedCar = carClick.target.className
+//     document.querySelector(`.${selectedCar}`).classList.add("selected")
+// })
 // https://developer.mozilla.org/en-US/docs/Web/API/CanvasGradient
 // module.exports = {};
