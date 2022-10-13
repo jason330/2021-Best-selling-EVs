@@ -1,7 +1,7 @@
 @import "./styles/reset.css";
 
 body {
-    background-color: #A6A4A6;
+    background-color: #D9D7D8;
     font-family: 'Noto Sans';
     color: #403F40;
 }
@@ -9,10 +9,29 @@ body {
 header {
     display: flex;
     justify-content: center;
+    padding: 20px;
+    font-size: 32px;
 }
 
-h2 {
+#github {
+    width: 33px;
+    padding: 2px;
+    margin-right: 5px;
+    border: 3px solid transparent;
+    border-radius: 34px;
+}
 
+#github:hover {
+    // border: 3px solid #403F40;
+    opacity: 0.7;
+    box-shadow: 0 0 5px #737273;
+}
+
+h1 {
+    // display: flex;
+    // justify-content: center;
+    margin-left: 10px;
+    font-size: 22px;
 }
 
 nav {
@@ -24,20 +43,55 @@ nav {
 main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    // justify-content: space-around;
 }
 
-#buttons {
-    margin-top: 50px;
+#carsSection {
+    margin-top: 35px;
+    margin-left: 20px;
+}
+
+#carsList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 33vw;
+    
+}
+
+#carsList img {
     // display: flex;
-    // flex-direction: row;
-    // flex-wrap: wrap;
+    height: auto;
+    width: 175px;
+    margin: 10px;
+    border-radius: 20px;
 }
 
+#carsList h2 {
+    justify-content: center;
+}
+
+#carsList li {
+    // display: flex;
+    margin-top: 10px;
+}
 ul {
     list-style: none;
     // flex-wrap: wrap;
     // align-content: space-between;
+}
+
+#buttonsSection {
+    margin-top: 60px;
+    margin-left: 50px;
+    // display: flex;
+    // justify-content: center;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+}
+
+#buttonsSection h1 {
+    text-align: center;
+    margin-left: 0;
 }
 
 #specifications li {
@@ -50,7 +104,7 @@ ul {
 
 #specifications li:hover {
     cursor: pointer;
-    background-color: #D9D7D8;
+    background-color: #737273;
     // opacity: 50%;
 }
 
@@ -60,7 +114,7 @@ ul {
     margin-right: 15px;
 }
 
-h1 {
+h2 {
     display: flex;
     align-items: center;
     // justify-content: center;

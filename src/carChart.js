@@ -135,7 +135,7 @@
 let cars = [
     {
         name: "Hyundai Ioniq Electric",
-        price: 45295,
+        "Price": 45295,
         economy_combined: 114,
         economy_detailed: "114/132/98",
         range: 303,
@@ -146,7 +146,7 @@ let cars = [
     },
     {
         name: "Hyundai Kona Electric",
-        price: 35295,
+        "Price": 35295,
         economy_combined: 120,
         economy_detailed: "120/132/108",
         range: 258,
@@ -157,7 +157,7 @@ let cars = [
     },
     {
         name: "Tesla Model X",
-        price: 120990,
+        "Price": 120990,
         economy_combined: 105,
         economy_detailed: "105/109/101",
         range: 347,
@@ -168,7 +168,7 @@ let cars = [
     },
     {
         name: "Tesla Model S",
-        price: 104990,
+        "Price": 104990,
         economy_combined: 117,
         economy_detailed: "117/121/112",
         range: 405,
@@ -179,7 +179,7 @@ let cars = [
     },
     {
         name: "Porsche Taycan 4S",
-        price: 107950,
+        "Price": 107950,
         economy_combined: 79,
         economy_detailed: "79/76/84",
         range: 227,
@@ -190,7 +190,7 @@ let cars = [
     },
     {
         name: "Audi e-tron",
-        price: 71995,
+        "Price": 71995,
         economy_combined: 79,
         economy_detailed: "79/78/79",
         range: 226,
@@ -201,7 +201,7 @@ let cars = [
     },
     {
         name: "Nissan Leaf SV PLUS",
-        price: 37135,
+        "Price": 37135,
         economy_combined: 109,
         economy_detailed: "109/121/98",
         range: 215,
@@ -212,7 +212,7 @@ let cars = [
     },
     {
         name: "Volkswagen ID.4 Pro",
-        price: 43790,
+        "Price": 43790,
         economy_combined: 91,
         economy_detailed: "91/104/89",
         range: 275,
@@ -223,7 +223,7 @@ let cars = [
     },
     {
         name: "Chevrolet Bolt EV",
-        price: 32495,
+        "Price": 32495,
         economy_combined: 118,
         economy_detailed: "118/127/108",
         range: 259,
@@ -233,8 +233,8 @@ let cars = [
         Cargo : 16.6
     },
     {
-        name: "Ford Mustang Mach-E California Route 1",
-        price: 64875,
+        name: "Ford Mustang Mach-E",    //California Route 1
+        "Price": 64875,
         economy_combined: 100,
         economy_detailed: "100/105/93",
         range: 312,
@@ -245,7 +245,7 @@ let cars = [
     },
     {
         name: "Tesla Model Y Long Range",
-        price: 65990,
+        "Price": 65990,
         economy_combined: 122,
         economy_detailed: "122/127/117",
         range: 326,
@@ -256,7 +256,7 @@ let cars = [
     },
     {
         name: "Tesla Model 3 RWD",
-        price: 46990,
+        "Price": 46990,
         economy_combined: 132,
         economy_detailed: "132/138/126",
         range: 272,
@@ -267,43 +267,69 @@ let cars = [
     }
 ]
 
+const specToKey = {
+    "Price": "Price",
+    "Economy": "economy_combined",
+    "Range": "range",
+    "Peak Power": "peak_power",
+    "Acceleration (0-60 mph)": "acceleration",
+    "Max Seating": "max_Seating",
+    "Cargo Space": "Cargo"
+  }
+
+const specToUnits = {
+    "Price": "US Dollars",
+    economy_combined: "MPGe, combined city/highway",
+    range: "miles",
+    peak_power: "hp",
+    acceleration: "seconds",
+    max_Seating: "maximum seating capacity",
+    Cargo: "cu.-ft., with rear seats up"
+}
 // LEFT PANEL, ALL CARS
-let emptyCarsUlist = document.getElementById("cars")
+let emptyCarsUlist = document.getElementById("carsList")
 
-let carNamesArray = cars.map(carObj => carObj.name)
+// let carNamesArray = cars.map(carObj => carObj.name)
 
-carNamesArray.forEach(carName => {
-    let newCarItem = document.createElement("li")
-    emptyCarsUlist.append(newCarItem);
-    newCarItem.innerText = carName
-    // carNamesArray.push(car["name"])
-})
+// carNamesArray.forEach(carName => {
+//     let newCarItem = document.createElement("li")
+//     emptyCarsUlist.append(newCarItem);
+//     newCarItem.innerText = carName
+//     // carNamesArray.push(car["name"])
+// })
 
 
 // CAR CHART
-let selectedCategory = "price"
+let selectedCategory = "Price"
 let sortedCarObjArr
-if (selectedCategory === "price" || selectedCategory === "acceleration") {
+if (selectedCategory === "Price" || selectedCategory === "acceleration") {
     sortedCarObjArr = cars.sort((a,b) => a[selectedCategory] - b[selectedCategory]);
 } else {
     sortedCarObjArr = cars.sort((a,b) => b[selectedCategory] - a[selectedCategory]);
 }
-// debugger
+
 
 let sortedDataArr = sortedCarObjArr.map(carObj => carObj[selectedCategory])
 let sortedNamesArr = sortedCarObjArr.map(carObj => carObj.name)
-// debugger
+let axisUnit = specToUnits[selectedCategory]
+let updatedLabel = Object.keys(specToKey).find(key => specToKey[key] === selectedCategory)
+
 // Object.values(CARS).map(carSpecs => {
-//     // debugger
-//     return carSpecs[selectedCategory]
-// })
+    //     // debugger
+    //     return carSpecs[selectedCategory]
+    // })
+    
+    // let ascendingCategories = [price, acceleration]
+    // let reversed = true
+    // carChart.options.scales.y.reverse = false
+    // }
+    
+const ctx = document.getElementById('carChart').getContext('2d');
+const gradient = ctx.createLinearGradient(5, 730, 5, 100)
+gradient.addColorStop(0, "#A6A4A6")
+gradient.addColorStop(1, "#403F40")
+// ctx.fillStyle = gradient 
 
-// let ascendingCategories = [price, acceleration]
-// let reversed = true
-// carChart.options.scales.y.reverse = false
-// }
-
-const ctx = 'carChart'
 let carChart = new Chart (ctx, {
     type: 'bar',
     data: {
@@ -311,7 +337,7 @@ let carChart = new Chart (ctx, {
         datasets: [{
             label: selectedCategory,    //`${Object.keys(cars[0])[1]}`
             data: sortedDataArr,
-            backgroundColor: ["green"],
+            backgroundColor: gradient,
             borderColor: ["rgba(0, 0, 0, 0.1)"],
             borderWidth: 1,
         }]
@@ -322,12 +348,50 @@ let carChart = new Chart (ctx, {
             x: {
                 title: {
                     display: true,
-                    text: `title = ${Object.keys(cars[0])[1]}`,
+                    text: axisUnit,
+                    font: {
+                        size: 16
+                    }
                 },
-                position: 'top'
+                position: 'top',
+                ticks: {
+                    font: {
+                        size: 14
+                    },
+                    callback: function(value, index, ticks) {
+                    return '$' + new Intl.NumberFormat().format(value);
+                }},
             },
             y: {
+                ticks: {
+                    font: {
+                        size: 14
+                    }
+                }                
                 // reverse: reversed
+            }
+        },
+        plugins: {
+            title: {
+                display: true,
+                fullSize: false,
+                text: updatedLabel,
+                font: {
+                    size: 24
+                }
+            },
+            legend: {
+                display: false,
+                // labels: {
+                //     display: false
+                //     // textAlign: 'left',
+                //     // font: {
+                //     //     size: 20
+                //     // }
+                // },
+                // title: {
+                //     display: false
+                // }
             }
         }
         // grouped: true
@@ -352,25 +416,17 @@ let carChart = new Chart (ctx, {
 
 let emptySpecsUlist = document.getElementById("specifications")
 
-const specArr = [
-  "Price (USD)",
-  "Economy (MPGe, combined city/highway)",
-  "Range (miles)",
-  "Peak Power (hp)",
-  "Acceleration (0-60 mph)",
-  "Max Seating",
-  "Cargo Space (cu.-ft., with rear seats up)"
-]
+  
+// [
+//   "$ USD",
+//   "Economy (MPGe, combined city/highway)",
+//   "Range (miles)",
+//   "Peak Power (hp)",
+//   "Acceleration (0-60 mph)",
+//   "Max Seating",
+//   "Cargo Space (cu.-ft., with rear seats up)"
+// ]
 
-const specToKey = {
-  "Price (USD)": "price",
-  "Economy (MPGe, combined city/highway)": "economy_combined",
-  "Range (miles)": "range",
-  "Peak Power (hp)": "peak_power",
-  "Acceleration (0-60 mph)": "acceleration",
-  "Max Seating": "max_Seating",
-  "Cargo Space (cu.-ft., with rear seats up)": "Cargo"
-}
 
 // specArr.forEach(spec => {
 //   let newSpecification = document.createElement("li")
@@ -385,9 +441,11 @@ const specToKey = {
 // }
 
 emptySpecsUlist.addEventListener("click", (clickEvent) => {
+    
     selectedCategory = clickEvent.target.className
-    console.log(clickEvent, "clickevent")
-    if (selectedCategory === "price" || selectedCategory === "acceleration") {
+    document.querySelector(`.${selectedCategory}`).classList.add("selected")
+
+    if (selectedCategory === "Price" || selectedCategory === "acceleration") {
         sortedCarObjArr = cars.sort((a,b) => a[selectedCategory] - b[selectedCategory]);
     } else {
         sortedCarObjArr = cars.sort((a,b) => b[selectedCategory] - a[selectedCategory]);
@@ -396,18 +454,33 @@ emptySpecsUlist.addEventListener("click", (clickEvent) => {
     sortedDataArr = sortedCarObjArr.map(carObj => carObj[selectedCategory])
     sortedNamesArr = sortedCarObjArr.map(carObj => carObj.name)
 
-    let updatedLabel = Object.keys(specToKey).find(key => specToKey[key] === selectedCategory)
+    updatedLabel = Object.keys(specToKey).find(key => specToKey[key] === selectedCategory)
+
+    axisUnit = specToUnits[selectedCategory]
 
     carChart.data.labels = sortedNamesArr
     carChart.data.datasets = [{
         label: updatedLabel,    //`${Object.keys(cars[0])[1]}`
         data: sortedDataArr,
-        backgroundColor: ["green"],
+        backgroundColor: gradient,
         borderColor: ["rgba(0, 0, 0, 0.1)"],
         borderWidth: 1,
     }]
+    carChart.options.scales.x.title.text = axisUnit
+    carChart.options.plugins.title.text = updatedLabel
 
-    // debugger
+
+    if (selectedCategory === "Price") {
+        carChart.options.scales.x.ticks.callback = function(value, index, ticks) {
+            return '$' + new Intl.NumberFormat().format(value);
+        }
+    } else {
+        carChart.options.scales.x.ticks = {
+            font: {
+                size: 14
+            }
+        }
+    }
     // if (selectedCategory === "price" || selectedCategory === "acceleration") {
     //     carChart.options.scales.y.reverse = false
     // }
