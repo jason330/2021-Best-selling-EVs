@@ -112,6 +112,7 @@ main {
 
 #carsList {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -175,7 +176,6 @@ ul {
 }
 
 h2 {
-  display: flex;
   font-size: 15px;
 }
 

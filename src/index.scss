@@ -63,6 +63,7 @@ main {
 
 #carsList {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
     // width: 33vw;
     
@@ -139,7 +140,7 @@ ul {
 }
 
 h2 {
-    display: flex;
+    // display: flex;
     // align-items: center;
     font-size: 15px;
     // justify-content: center;
