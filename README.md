@@ -2,33 +2,23 @@
 
 
 
-https://github.com/jason330/2021-Best-selling-EVs
+Link to the site: https://jason330.github.io/2021-Best-selling-EVs/
 
-### Background
+## Screenshot:
+![Page screen shot](assets\EVss.jpg)
+
+## Background
 
 At this site, users can get information about and compare through a bar chart the best-selling electric vehicles of 2021 in the United States. Users can choose to sort chart data based on multiple car specification categories such as price, range, and passenger capacity. User selection will update the specification category and sort order of the chart data. 
 
 
-
-
-### Instructions
+## Instructions
 
 1. Simply click on any of the "Sort By:" buttons on the right side of the page to choose which specification category to display in the chart.
 2. Hover over each bar in the chart to get car specific data.
 
 
-
-
-### Wireframe
-
-![Page wireframe](assets/results.png)
-- The main panel will display the bar graph.
-- The smaller right panel will display specifications, which the user can select to sort the results.
-
-
-
-
-### Technologies, Libraries, APIs
+## Technologies, Libraries, APIs
 
 This project is implemented with the following technologies:
 
@@ -37,9 +27,14 @@ This project is implemented with the following technologies:
 - npm to manage project dependencies
 
 
+## Wireframe
+
+![Page wireframe](assets/results.png)
+- The main panel will display the bar graph.
+- The smaller right panel will display specifications, which the user can select to sort the results.
 
 
-### Implementation Timeline
+## Implementation Timeline
 
 - Friday:
     - Setup project, including getting webpack up and running.
@@ -74,9 +69,7 @@ This project is implemented with the following technologies:
 - Thursday Morning: Deploy to GitHub pages. If time, rewrite this proposal as a production README.
 
 
-
-
-### Technical Implementation Details
+## Technical Implementation Details
 
 There is an array of objects, with each object containing individual car data.
 
@@ -88,8 +81,7 @@ There is an event listener on the specification category list, which updates the
 
 
 
-
-### Future Features
+## Future Features
 
 1. Allow the user to select specific cars, either to display only the selected cars in the chart, or to highlight the selected bars in the chart.
 2. Improve color scheme.
