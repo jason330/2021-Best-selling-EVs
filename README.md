@@ -5,7 +5,7 @@
 Link to the site: https://jason330.github.io/2021-Best-selling-EVs/
 
 ## Screenshot:
-![Page screen shot](assets\EVss.jpg)
+![Page screen shot](assets/EVss.jpg)
 
 ## Background
 
@@ -13,9 +13,18 @@ At this site, users can get information about and compare through a bar chart th
 
 
 ## Instructions
+   - ### Site usage
 
-1. Simply click on any of the "Sort By:" buttons on the right side of the page to choose which specification category to display in the chart.
-2. Hover over each bar in the chart to get car specific data.
+        1. Simply click on any of the "Sort By:" buttons on the right side of the page to choose which specification category to display in the chart.
+        2. Hover over each bar in the chart to get car specific data.
+
+
+   - ### Setup/installation
+        1. Clone the project. Then in your terminal, `cd` into the folder.
+        2. Run `node -v` to check your Node.js version. Versions between v12 and v16 should work.
+        3. Run `npm install` to install dependencies.
+        4. Run `npm start`.
+        5. Open **index.html** in your browser.
 
 
 ## Technologies, Libraries, APIs
