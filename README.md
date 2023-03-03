@@ -12,6 +12,15 @@ Link to the site: https://jason330.github.io/2021-Best-selling-EVs/
 At this site, users can get information about and compare through a bar chart the best-selling electric vehicles of 2021 in the United States. Users can choose to sort chart data based on multiple car specification categories such as price, range, and passenger capacity. User selection will update the specification category and sort order of the chart data. 
 
 
+## Technologies, Libraries, APIs
+
+This project is implemented with the following technologies:
+
+- The Chart.js library to visually display data
+- Webpack and Babel to bundle and transpile the source JavaScript code
+- npm to manage project dependencies
+
+
 ## Instructions
    - ### Site usage
 
@@ -25,15 +34,6 @@ At this site, users can get information about and compare through a bar chart th
         3. Run `npm install` to install dependencies.
         4. Run `npm start`.
         5. Open **index.html** in your browser.
-
-
-## Technologies, Libraries, APIs
-
-This project is implemented with the following technologies:
-
-- The Chart.js library to visually display data
-- Webpack and Babel to bundle and transpile the source JavaScript code
-- npm to manage project dependencies
 
 
 ## Wireframe
