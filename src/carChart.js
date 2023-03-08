@@ -142,7 +142,8 @@ let cars = [
         peak_power: 225,
         acceleration : 7.4,
         max_Seating : 5,
-        Cargo: 27.2
+        Cargo: 27.2,
+        src: 'ioniq.jpeg'
     },
     {
         name: "Hyundai Kona Electric",
@@ -153,7 +154,8 @@ let cars = [
         peak_power: 201,
         acceleration : 7.9,
         max_Seating : 5,
-        Cargo : 19.2
+        Cargo : 19.2,
+        src: 'kona.jpeg'
     },
     {
         name: "Tesla Model X",
@@ -164,7 +166,8 @@ let cars = [
         peak_power: 670,
         acceleration : 3.8,
         max_Seating : 7,
-        Cargo : 37.1
+        Cargo : 37.1,
+        src: 'modelX.jpeg'
     },
     {
         name: "Tesla Model S",
@@ -175,7 +178,8 @@ let cars = [
         peak_power: 670,
         acceleration : 3.1,
         max_Seating : 5,
-        Cargo : 28
+        Cargo : 28,
+        src: 'modelS.jpeg'
     },
     {
         name: "Porsche Taycan 4S",
@@ -186,7 +190,8 @@ let cars = [
         peak_power: 429,
         acceleration : 3.8,
         max_Seating : 5,
-        Cargo : 14.3
+        Cargo : 14.3,
+        src: 'taycan4S.jpeg'
     },
     {
         name: "Audi e-tron",
@@ -197,7 +202,8 @@ let cars = [
         peak_power: 402,
         acceleration : 5.5,
         max_Seating : 5,
-        Cargo : 28.5
+        Cargo : 28.5,
+        src: 'e-tron.jpeg'
     },
     {
         name: "Nissan Leaf SV PLUS",
@@ -208,7 +214,8 @@ let cars = [
         peak_power: 214,
         acceleration : 7.4,
         max_Seating : 5,
-        Cargo : 23.6 
+        Cargo : 23.6,
+        src: 'leaf.jpeg'
     },
     {
         name: "Volkswagen ID.4 Pro",
@@ -219,7 +226,8 @@ let cars = [
         peak_power: 201,
         acceleration : 7.6,
         max_Seating : 5,
-        Cargo : 30.3
+        Cargo : 30.3,
+        src: 'ID4.jpeg'
     },
     {
         name: "Chevrolet Bolt EV",
@@ -230,7 +238,8 @@ let cars = [
         peak_power: 200,
         acceleration : 6.5,
         max_Seating : 5,
-        Cargo : 16.6
+        Cargo : 16.6,
+        src: 'BoltEV.jpeg'
     },
     {
         name: "Ford Mustang Mach-E",    //California Route 1
@@ -241,7 +250,8 @@ let cars = [
         peak_power: 346,
         acceleration : 4.8,
         max_Seating : 5,
-        Cargo : 29
+        Cargo : 29,
+        src: 'mustang.jpeg'
     },
     {
         name: "Tesla Model Y Long Range",
@@ -252,7 +262,8 @@ let cars = [
         peak_power: 390,
         acceleration : 4.8,
         max_Seating : 7,
-        Cargo : 30.2
+        Cargo : 30.2,
+        src: 'ModelY.jpeg'
     },
     {
         name: "Tesla Model 3 RWD",
@@ -263,7 +274,8 @@ let cars = [
         peak_power: 271,
         acceleration : 5.8,
         max_Seating : 5,
-        Cargo : 22.9
+        Cargo : 22.9,
+        src: 'Model3.jpeg'
     }
 ]
 
@@ -286,9 +298,38 @@ const specToUnits = {
     max_Seating: "maximum seating capacity",
     Cargo: "cu.-ft., with rear seats up"
 }
-// LEFT PANEL, ALL CARS
-let emptyCarsUlist = document.getElementById("carsList")
 
+let selectedCategory = "Price"
+let sortedCarObjArr
+
+// LEFT PANEL, ALL CARS
+const emptyCarsUlist = document.getElementById("carsList")
+
+const renderCars = (selectedCategory) => {
+
+    if (selectedCategory === "Price" || selectedCategory === "acceleration") {
+        sortedCarObjArr = cars.sort((a,b) => a[selectedCategory] - b[selectedCategory]);
+    } else {
+        sortedCarObjArr = cars.sort((a,b) => b[selectedCategory] - a[selectedCategory]);
+    }
+
+    sortedCarObjArr.map(carObj => {
+        const newCarItem = document.createElement("li")
+        // newCarItem.setAttribute('id', carObj.name)
+
+        const img = document.createElement("img")
+        img.setAttribute('src', `assets/carImages/${carObj.src}`)
+        img.setAttribute('alt', carObj.name)
+    
+        const h2 = document.createElement("h2")
+        h2.innerText = carObj.name
+    
+        newCarItem.append(img, h2)
+        emptyCarsUlist.append(newCarItem)
+    })
+}
+
+renderCars(selectedCategory)
 // let carNamesArray = cars.map(carObj => carObj.name)
 
 // carNamesArray.forEach(carName => {
@@ -300,14 +341,6 @@ let emptyCarsUlist = document.getElementById("carsList")
 
 
 // CAR CHART
-let selectedCategory = "Price"
-let sortedCarObjArr
-if (selectedCategory === "Price" || selectedCategory === "acceleration") {
-    sortedCarObjArr = cars.sort((a,b) => a[selectedCategory] - b[selectedCategory]);
-} else {
-    sortedCarObjArr = cars.sort((a,b) => b[selectedCategory] - a[selectedCategory]);
-}
-
 
 let sortedDataArr = sortedCarObjArr.map(carObj => carObj[selectedCategory])
 let sortedNamesArr = sortedCarObjArr.map(carObj => carObj.name)
@@ -495,6 +528,8 @@ emptySpecsUlist.addEventListener("click", (clickEvent) => {
     // if (selectedCategory === "price" || selectedCategory === "acceleration") {
     //     carChart.options.scales.y.reverse = false
     // }
+    emptyCarsUlist.replaceChildren()
+    renderCars(selectedCategory)
     carChart.update();
 })
 
