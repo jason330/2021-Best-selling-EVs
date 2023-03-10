@@ -313,7 +313,7 @@ const renderCars = (selectedCategory) => {
         sortedCarObjArr = cars.sort((a,b) => b[selectedCategory] - a[selectedCategory]);
     }
 
-    sortedCarObjArr.map(carObj => {
+    for (const carObj of sortedCarObjArr) {
         const newCarItem = document.createElement("li")
         // newCarItem.setAttribute('id', carObj.name)
 
@@ -326,7 +326,7 @@ const renderCars = (selectedCategory) => {
     
         newCarItem.append(img, h2)
         emptyCarsUlist.append(newCarItem)
-    })
+    }
 }
 
 renderCars(selectedCategory)

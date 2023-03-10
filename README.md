@@ -5,11 +5,11 @@
 Link to the site: https://jason330.github.io/2021-Best-selling-EVs/
 
 ## Screenshot:
-![Page screen shot](assets/EVss.jpg)
+![Page screen shot](assets/EVss2full.jpg)
 
 ## Background
 
-At this site, users can get information about and compare through a bar chart the best-selling electric vehicles of 2021 in the United States. Users can choose to sort chart data based on multiple car specification categories such as price, range, and passenger capacity. User selection will update the specification category and sort order of the chart data. 
+At this site, users can get information about, and compare through a bar chart, the best-selling electric vehicles of 2021 in the United States. Users can choose to sort chart data based on multiple car specification categories such as price, range, and passenger capacity. User selection will update the specification category and sort order of the chart data as well as the car images. 
 
 
 ## Technologies, Libraries, APIs
@@ -86,7 +86,7 @@ There are multiple variables to manage chart updates, such as the currently sele
 
 The bar colors are based on a canvas gradient.
 
-There is an event listener on the specification category list, which updates the selected category and the chart.
+There is an event listener on the specification category list, which updates the selected category, the chart, and the car images.
 
 
 
